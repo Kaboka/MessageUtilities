@@ -35,7 +35,7 @@ public class xmlMapper {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder;
             builder = factory.newDocumentBuilder();
-            doc = builder.parse(message);
+            doc = builder.parse(new ByteArrayInputStream(message.getBytes()));
         } catch (SAXException ex) {
             Logger.getLogger(xmlMapper.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
